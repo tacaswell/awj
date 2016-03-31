@@ -23,4 +23,4 @@ done, the ``max_size`` is more of a suggestion than a guarantee.
 
 The full `dict` interface has is not implemented (yet).
 
-There are feather poking out everywhere.
+There are feathers poking out everywhere.
