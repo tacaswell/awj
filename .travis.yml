@@ -23,7 +23,7 @@ install:
   - gcc --version
   - g++ --version
   - CC=gcc-4.8 CXX=g++-4.8 pip install cython
-  - CC=gcc-4.8 CXX=g++-4.8 pip install feather-format
+  - CC=gcc-4.8 CXX=g++-4.8 pip install feather-format pandas
   - pip install pytest pytest-cov
   - python setup.py install
 
