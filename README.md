@@ -21,6 +21,8 @@ recently used files are deleted until the cache is under size.  The
 first insert before pruning will save to disk before the pruning is
 done, the ``max_size`` is more of a suggestion than a guarantee.
 
+Keys must be strings which can be used as part of a filename.
+
 The full `dict` interface has is not implemented (yet).
 
 There are feathers poking out everywhere.
