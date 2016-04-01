@@ -1,0 +1,17 @@
+language: python
+
+matrix:
+  include:
+    - python: 3.4
+    - python: 3.5
+    - python: "nightly"
+      env: PRE=--pre
+  allow_failures:
+    - python : "nightly"
+
+install:
+  - pip install cython
+  - python setup.py install
+
+script:
+  - python -m pytest --cov=awj --cov-report term-missing
