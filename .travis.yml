@@ -22,8 +22,8 @@ install:
   - hash -r
   - gcc --version
   - g++ --version
-  - pip install cython
-  - pip install feather-format
+  - CC=gcc-4.8 CXX=g++-4.8 pip install cython
+  - CC=gcc-4.8 CXX=g++-4.8 pip install feather-format
   - python setup.py install
 
 script:
