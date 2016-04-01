@@ -19,6 +19,7 @@ matrix:
     - python : "nightly"
 
 install:
+  - hash -r
   - gcc --version
   - g++ --version
   - pip install cython
