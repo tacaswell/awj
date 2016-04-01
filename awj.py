@@ -38,7 +38,9 @@ class AWJ:
         self._heap = []
 
         # put files in to heap in random order
-        for fn in shuffle(glob(os.path.join(self._cache_path, '*feather'))):
+        files = glob(os.path.join(self._cache_path, '*feather'))
+        shuffle(files)
+        for fn in files:
             key = self._key_from_filename(fn)
             self._fn_cache[key] = fn
             stat = os.stat(fn)
