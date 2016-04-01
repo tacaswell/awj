@@ -98,6 +98,8 @@ class AWJ:
 
     def __delitem__(self, key):
         fn = self._fn_cache.pop(key)
+        self._sz_cache.pop(key)
+        self._heap_map.pop(key)
         os.unlink(fn)
 
     def __contains__(self, key):
