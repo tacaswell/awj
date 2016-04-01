@@ -29,6 +29,7 @@ before_install:
 install:
   - hash -r
   - ccache -s
+  - pip install --upgrade pip
   - CC=gcc-4.8 CXX=g++-4.8 pip install cython
   - CC=gcc-4.8 CXX=g++-4.8 pip install feather-format pandas
   - pip install pytest pytest-cov
