@@ -19,6 +19,8 @@ matrix:
     - python : "nightly"
 
 install:
+  - gcc --version
+  - g++ --version
   - pip install cython
   - pip install feather-format
   - python setup.py install
