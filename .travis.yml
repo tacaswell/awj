@@ -1,6 +1,18 @@
 language: python
 
-cache: pip
+cache:
+  directories:
+    - $HOME/.ccache
+    - $HOME/.cache/pip
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
+      - ccache
 
 matrix:
   include:
@@ -11,8 +23,16 @@ matrix:
   allow_failures:
     - python : "nightly"
 
+before_install:
+  - export PATH=/usr/lib/ccache:$PATH
+
 install:
-  - pip install cython
+  - hash -r
+  - ccache -s
+  - pip install --upgrade pip
+  - CC=gcc-4.8 CXX=g++-4.8 pip install cython
+  - CC=gcc-4.8 CXX=g++-4.8 pip install feather-format pandas
+  - pip install pytest pytest-cov
   - python setup.py install
 
 script:
