@@ -107,3 +107,10 @@ class AWJ:
 
     def __iter__(self):
         return iter(self._fn_cache)
+
+    @property
+    def cache_path(self):
+        return self._cache_path
+
+    def __len__(self):
+        return len(self._fn_cache)
