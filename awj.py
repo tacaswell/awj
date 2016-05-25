@@ -3,13 +3,14 @@ import os.path
 import time
 import heapq
 
+from collections.abc import MutableMapping
 from random import shuffle
 from glob import glob
 
 import feather
 
 
-class AWJ:
+class AWJ(MutableMapping):
     '''LRU cache for DataFrames backed by on-disk feather files
 
 
