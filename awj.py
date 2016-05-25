@@ -27,7 +27,7 @@ class AWJ:
         self.max_size = max_size
         # convert to bytes
         if self.max_size is not None:
-             self.max_size *= 1048576
+            self.max_size *= 1048576
 
         # TODO 2k compat
         os.makedirs(cache_path, exist_ok=True)
