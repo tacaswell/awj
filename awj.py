@@ -58,7 +58,7 @@ class AWJ:
 
         # TODO deal with pathological case of single file larger than max_size
         # as written this will result is all files being removed
-        cur_size = sum(v for v in self._sz_cache.values())
+        cur_size = self.cache_size
         while cur_size > self.max_size:
             _, key = heapq.heappop(self._heap)
             if key in self:
@@ -111,6 +111,10 @@ class AWJ:
     @property
     def cache_path(self):
         return self._cache_path
+
+    @property
+    def cache_size(self):
+        return sum(v for v in self._sz_cache.values())
 
     def __len__(self):
         return len(self._fn_cache)
