@@ -78,7 +78,7 @@ class AWJ:
         self._fn_cache[key] = fn
         self._sz_cache[key] = os.stat(fn).st_size
         if key in self._heap_map:
-            self._heap_map[0] = time.time()
+            self._heap_map[key][0] = time.time()
             # ensure the heap invariant
             heapq.heapify(self._heap)
         else:
@@ -91,7 +91,7 @@ class AWJ:
     def __getitem__(self, key):
         fn = self._fn_cache[key]
         ret = feather.read_dataframe(fn)
-        self._heap_map[0] = time.time()
+        self._heap_map[key][0] = time.time()
         # ensure the heap invariant
         heapq.heapify(self._heap)
         return ret
